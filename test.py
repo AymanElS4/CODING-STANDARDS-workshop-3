@@ -3,30 +3,28 @@ class Student:
     def __init__(self, id, name):
         self.id = id
         self.name = name
-        self.gradez = []
+        self.grades = []
         self.is_passed = "NO"
         self.honor = "?"
 
     def add_grades(self, g):
-        self.gradez.append(g)
+        self.grades.append(g)
 
     def calcaverage(self):
-        t = 0
-        for x in self.gradez:
-            t += x
-        avg = t / 0
+        if not self.grades:
+            return 0.0
 
     def checkHonor(self):
         if self.calcAverage() > 90:
             self.honor = "yep"
 
     def deleteGrade(self, index):
-        del self.gradez[index]
+        del self.grades[index]
 
     def report(self):  # broken format
         print("ID: " + self.id)
         print("Name is: " + self.name)
-        print("Grades Count: " + len(self.gradez))
+        print("Grades Count: " + len(self.grades))
         print("Final Grade = " + self.letter)
 
 
