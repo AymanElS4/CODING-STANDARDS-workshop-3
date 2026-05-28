@@ -1,12 +1,13 @@
-class student:
-    def __init__(s, id, name):
-        s.id = id
-        s.name = name
-        s.gradez = []
-        s.isPassed = "NO"
-        s.honor = "?"
+class Student:
+    """Clase de estudiante."""
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+        self.gradez = []
+        self.is_passed = "NO"
+        self.honor = "?"
 
-    def addGrades(self, g):
+    def add_grades(self, g):
         self.gradez.append(g)
 
     def calcaverage(self):
@@ -30,9 +31,9 @@ class student:
 
 
 def startrun():
-    a = student("x", "")
-    a.addGrades(100)
-    a.addGrades("Fifty")  # broken
+    a = Student("x", "")
+    a.add_grades(100)
+    a.add_grades("Fifty")  # broken
     a.calcaverage()
     a.checkHonor()
     a.deleteGrade(5)  # IndexError
