@@ -4,8 +4,8 @@ class Student:
         self.id = id
         self.name = name
         self.grades = []
-        self.is_passed = "NO"
-        self.honor = "?"
+        self.is_passed = False
+        self.honor = False
 
     def add_grades(self, g):
         self.grades.append(g)
@@ -28,8 +28,8 @@ class Student:
         return "F"
 
     def checkHonor(self):
-        if self.calcAverage() > 90:
-            self.honor = "yep"
+        if self.calc_average() > 90:
+            self.honor = True
 
     def deleteGrade(self, index):
         del self.grades[index]
