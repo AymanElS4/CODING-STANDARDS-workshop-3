@@ -10,9 +10,22 @@ class Student:
     def add_grades(self, g):
         self.grades.append(g)
 
-    def calcaverage(self):
+    def calc_average(self):
         if not self.grades:
             return 0.0
+        return sum(self.grades) / len(self.grades)
+    
+    def get_letter_grade(self):
+        avg = self.calc_average()
+        if avg >= 90:
+            return "A"
+        if avg >= 80:
+            return "B"
+        if avg >= 70:
+            return "C"
+        if avg >= 60:
+            return "D"
+        return "F"
 
     def checkHonor(self):
         if self.calcAverage() > 90:
