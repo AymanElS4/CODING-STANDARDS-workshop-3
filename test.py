@@ -27,9 +27,12 @@ class Student:
             return "D"
         return "F"
 
-    def checkHonor(self):
-        if self.calc_average() > 90:
-            self.honor = True
+    def check_honor(self):
+        self.honor = True if self.calc_average() > 90 else False
+
+    def determine_pass_fail(self):
+        self.is_passed = True if self.calc_average() >= 60 else False
+        return self.is_passed
 
     def remove_grade_by_index(self, index):
         if 0 <= index < len(self.grades):
