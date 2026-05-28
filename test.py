@@ -61,8 +61,9 @@ def startrun():
     a = Student("x", "")
     a.add_grades(100)
     a.calc_average()
-    a.checkHonor()
+    a.check_honor()
     a.report()
+    a.determine_pass_fail()
 
 
 startrun()
