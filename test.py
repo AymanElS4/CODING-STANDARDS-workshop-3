@@ -34,20 +34,22 @@ class Student:
     def deleteGrade(self, index):
         del self.grades[index]
 
-    def report(self):  # broken format
+    def report(self):  
+        """Imprime el resumen del estudiante."""
+
         print("ID: " + self.id)
         print("Name is: " + self.name)
-        print("Grades Count: " + len(self.grades))
-        print("Final Grade = " + self.letter)
+        print("Grades Count: " + str(len(self.grades)))
+        print("Final Grade = " + get_letter_grade(self))
 
 
 def startrun():
+    """Crea un estudiante y ejecuta las acciones de prueba."""
+
     a = Student("x", "")
     a.add_grades(100)
-    a.add_grades("Fifty")  # broken
-    a.calcaverage()
+    a.calc_average()
     a.checkHonor()
-    a.deleteGrade(5)  # IndexError
     a.report()
 
 
