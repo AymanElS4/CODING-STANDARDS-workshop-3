@@ -31,8 +31,17 @@ class Student:
         if self.calc_average() > 90:
             self.honor = True
 
-    def deleteGrade(self, index):
-        del self.grades[index]
+    def remove_grade_by_index(self, index):
+        if 0 <= index < len(self.grades):
+            self.grades.pop(index)
+        else:
+            print(f"Error: El índice {index} está fuera de los límites.")
+
+    def remove_grade_by_value(self, value):
+        if value in self.grades:
+            self.grades.remove(value)
+        else:
+            print(f"Error: La calificación '{value}' no existe. No se eliminó nada.")
 
     def report(self):  
         """Imprime el resumen del estudiante."""
